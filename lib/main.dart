@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'screens/external_apps.dart';
 import 'screens/flutter_mentions.dart';
 import 'screens/flutter_quill.dart';
+import 'screens/webview_flutter.dart';
 import 'localizations/codegen_loader.dart';
 import 'localizations/locale_keys.dart';
 
@@ -75,6 +76,14 @@ class MyHomePage extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(builder: (_) => FlutterMentionsScreen()),
+              );
+            },
+          ),
+          ElevatedButton(
+            child: const Text('WebView Flutter'),
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => WebViewExample()),
               );
             },
           ),

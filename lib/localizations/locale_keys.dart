@@ -1,5 +1,6 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
-abstract class LocaleKeys {
-  static const change_lang = 'change_lang';
+abstract class  LocaleKeys {
+  static const changeLang = 'changeLang';
+
 }

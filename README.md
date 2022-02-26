@@ -26,18 +26,18 @@ add this to `android/app/src/main/AndroidManifest.xml`:
 ```
 add this to `ios/Runner/Info.plist`:
 ```
-	<key>NSCalendarsUsageDescription</key>
-    <string>AddEventsToCalendar</string>
+<key>NSCalendarsUsageDescription</key>
+<string>AddEventsToCalendar</string>
 ```
 
 ### easy_localization:
 add this to `ios/Runner/Info.plist`:
 ```
-	<key>CFBundleLocalizations</key>
-    <array>
-    	<string>ar</string>
-    	<string>en</string>
-    </array>
+<key>CFBundleLocalizations</key>
+<array>
+    <string>ar</string>
+    <string>en</string>
+</array>
 ```
 after every localization update you must generate the CodegenLoader and LocaleKeys<br>
 use these commands in terminal:

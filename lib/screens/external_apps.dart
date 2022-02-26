@@ -28,7 +28,7 @@ class ExternalApps extends StatelessWidget {
                   description: 'Description',
                   location: 'Location',
                   startDate: now,
-                  endDate: now.add(Duration(days: 1)),
+                  endDate: now.add(const Duration(days: 1)),
                 ));
               },
             ),

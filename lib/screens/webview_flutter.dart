@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:developer';
 import 'dart:io';
 import 'dart:typed_data';
 
@@ -64,6 +65,8 @@ const String kTransparentBackgroundPage = '''
 ''';
 
 class WebViewExample extends StatefulWidget {
+  const WebViewExample({Key? key}) : super(key: key);
+
   @override
   _WebViewExampleState createState() => _WebViewExampleState();
 }
@@ -102,24 +105,24 @@ class _WebViewExampleState extends State<WebViewExample> {
             _controller.complete(webViewController);
           },
           onProgress: (int progress) {
-            print('WebView is loading (progress : $progress%)');
+            log('WebView is loading (progress : $progress%)');
           },
           javascriptChannels: <JavascriptChannel>{
             _toasterJavascriptChannel(context),
           },
           navigationDelegate: (NavigationRequest request) {
             if (request.url.startsWith('https://www.youtube.com/')) {
-              print('blocking navigation to $request}');
+              log('blocking navigation to $request}');
               return NavigationDecision.prevent;
             }
-            print('allowing navigation to $request');
+            log('allowing navigation to $request');
             return NavigationDecision.navigate;
           },
           onPageStarted: (String url) {
-            print('Page started loading: $url');
+            log('Page started loading: $url');
           },
           onPageFinished: (String url) {
-            print('Page finished loading: $url');
+            log('Page finished loading: $url');
           },
           gestureNavigationEnabled: true,
           backgroundColor: const Color(0x00000000),
@@ -181,7 +184,7 @@ enum MenuOptions {
 }
 
 class SampleMenu extends StatelessWidget {
-  SampleMenu(this.controller);
+  SampleMenu(this.controller, {Key? key}) : super(key: key);
 
   final Future<WebViewController> controller;
   final CookieManager cookieManager = CookieManager();
@@ -437,7 +440,8 @@ class SampleMenu extends StatelessWidget {
 }
 
 class NavigationControls extends StatelessWidget {
-  const NavigationControls(this._webViewControllerFuture);
+  const NavigationControls(this._webViewControllerFuture, {Key? key})
+      : super(key: key);
 
   final Future<WebViewController> _webViewControllerFuture;
 

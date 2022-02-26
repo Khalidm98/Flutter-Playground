@@ -6,7 +6,7 @@ import 'package:flutter_quill/flutter_quill.dart' hide Text;
 import 'package:markdown/markdown.dart' hide Text;
 
 class FlutterQuill extends StatefulWidget {
-  FlutterQuill({Key? key}) : super(key: key);
+  const FlutterQuill({Key? key}) : super(key: key);
 
   @override
   State<FlutterQuill> createState() => _FlutterQuillState();
@@ -18,7 +18,7 @@ class _FlutterQuillState extends State<FlutterQuill> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Flutter Quill')),
+      appBar: AppBar(title: const Text('Flutter Quill')),
       body: GestureDetector(
         behavior: HitTestBehavior.opaque,
         onTap: () => FocusScope.of(context).unfocus(),
@@ -26,7 +26,7 @@ class _FlutterQuillState extends State<FlutterQuill> {
           padding: const EdgeInsets.all(16),
           children: [
             ElevatedButton(
-              child: Text('Append'),
+              child: const Text('Append'),
               onPressed: () {
                 setState(() {
                   _controller.document
@@ -35,7 +35,7 @@ class _FlutterQuillState extends State<FlutterQuill> {
               },
             ),
             ElevatedButton(
-              child: Text('HTML'),
+              child: const Text('HTML'),
               onPressed: () {
                 showModalBottomSheet(
                   context: context,

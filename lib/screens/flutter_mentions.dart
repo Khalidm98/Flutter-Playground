@@ -1,14 +1,18 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_mentions/flutter_mentions.dart';
 
 class FlutterMentionsScreen extends StatelessWidget {
   final _key = GlobalKey<FlutterMentionsState>();
 
+  FlutterMentionsScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Portal(
       child: Scaffold(
-        appBar: AppBar(title: Text('Flutter Mentions')),
+        appBar: AppBar(title: const Text('Flutter Mentions')),
         body: GestureDetector(
           behavior: HitTestBehavior.opaque,
           onTap: () => FocusScope.of(context).unfocus(),
@@ -16,29 +20,24 @@ class FlutterMentionsScreen extends StatelessWidget {
             padding: const EdgeInsets.all(16),
             children: [
               ElevatedButton(
-                child: Text('Get Text'),
+                child: const Text('Get Text'),
                 onPressed: () {
-                  print(_key.currentState!.controller!.markupText);
+                  log(_key.currentState!.controller!.markupText);
                 },
               ),
               ElevatedButton(
-                child: Text('Append'),
+                child: const Text('Append'),
                 onPressed: () => _key.currentState!.controller!.text += "yes",
               ),
               FlutterMentions(
                 key: _key,
                 maxLines: 5,
                 minLines: 1,
-                decoration: InputDecoration(hintText: 'hello'),
-                onMentionAdd: (mention) {
-                  print('\n');
-                  print(mention);
-                  print(_key.currentState!.controller!.text);
-                },
+                decoration: const InputDecoration(hintText: 'hello'),
                 mentions: [
                   Mention(
                     trigger: '@',
-                    style: TextStyle(color: Colors.amber),
+                    style: const TextStyle(color: Colors.amber),
                     data: [
                       {
                         'id': '61as61fsa',
@@ -84,7 +83,7 @@ class FlutterMentionsScreen extends StatelessWidget {
                   Mention(
                     trigger: '#',
                     disableMarkup: true,
-                    style: TextStyle(color: Colors.blue),
+                    style: const TextStyle(color: Colors.blue),
                     data: [
                       {'id': 'reactjs', 'display': 'reactjs'},
                       {'id': 'javascript', 'display': 'javascript'},

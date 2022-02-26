@@ -12,15 +12,17 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   runApp(EasyLocalization(
-    supportedLocales: [Locale('en'), Locale('ar')],
-    fallbackLocale: Locale('en'),
-    assetLoader: CodegenLoader(),
+    supportedLocales: const [Locale('en'), Locale('ar')],
+    fallbackLocale: const Locale('en'),
+    assetLoader: const CodegenLoader(),
     path: 'assets/lang',
-    child: MyApp(),
+    child: const MyApp(),
   ));
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,12 +34,14 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         appBarTheme: const AppBarTheme(centerTitle: true),
       ),
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,20 +50,21 @@ class MyHomePage extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         children: [
           ElevatedButton(
-            child: Text(LocaleKeys.change_lang.tr()),
+            child: Text(LocaleKeys.changeLang.tr()),
             onPressed: () {
               final locale = context.locale;
-              if (locale.languageCode == 'en')
-                context.setLocale(Locale('ar'));
-              else if (locale.languageCode == 'ar')
-                context.setLocale(Locale('en'));
+              if (locale.languageCode == 'en') {
+                context.setLocale(const Locale('ar'));
+              } else if (locale.languageCode == 'ar') {
+                context.setLocale(const Locale('en'));
+              }
             },
           ),
           ElevatedButton(
             child: const Text('External Apps Integration'),
             onPressed: () {
               Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => ExternalApps()),
+                MaterialPageRoute(builder: (_) => const ExternalApps()),
               );
             },
           ),
@@ -67,7 +72,7 @@ class MyHomePage extends StatelessWidget {
             child: const Text('Flutter Quill'),
             onPressed: () {
               Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => FlutterQuill()),
+                MaterialPageRoute(builder: (_) => const FlutterQuill()),
               );
             },
           ),
@@ -83,7 +88,7 @@ class MyHomePage extends StatelessWidget {
             child: const Text('WebView Flutter'),
             onPressed: () {
               Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => WebViewExample()),
+                MaterialPageRoute(builder: (_) => const WebViewExample()),
               );
             },
           ),

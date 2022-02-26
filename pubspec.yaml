@@ -18,8 +18,8 @@ dependencies:
   add_2_calendar: ^2.1.2
   delta_markdown: ^0.3.0
   easy_localization: ^3.0.0
-  flutter_quill: 2.1.1
   flutter_mentions: ^2.0.1
+  flutter_quill: 2.1.1
   markdown: ^4.0.1
   share_plus: ^3.0.1
   webview_flutter: ^3.0.0

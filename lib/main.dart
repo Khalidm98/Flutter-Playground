@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'screens/external_apps.dart';
 import 'screens/flutter_mentions.dart';
 import 'screens/flutter_quill.dart';
+import 'screens/showcaseview.dart';
 import 'screens/webview_flutter.dart';
 import 'localizations/codegen_loader.dart';
 import 'localizations/locale_keys.dart';
@@ -81,6 +82,14 @@ class MyHomePage extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(builder: (_) => FlutterMentionsScreen()),
+              );
+            },
+          ),
+          ElevatedButton(
+            child: const Text('Showcase View'),
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => const ShowCaseView()),
               );
             },
           ),

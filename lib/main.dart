@@ -5,6 +5,7 @@ import 'screens/external_apps.dart';
 import 'screens/flutter_mentions.dart';
 import 'screens/flutter_quill.dart';
 import 'screens/showcaseview.dart';
+import 'screens/table_calendar_screen.dart';
 import 'screens/webview_flutter.dart';
 import 'localizations/codegen_loader.dart';
 import 'localizations/locale_keys.dart';
@@ -90,6 +91,14 @@ class MyHomePage extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(builder: (_) => const ShowCaseView()),
+              );
+            },
+          ),
+          ElevatedButton(
+            child: const Text('Table Calendar'),
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => const TableCalendarScreen()),
               );
             },
           ),

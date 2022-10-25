@@ -54,13 +54,11 @@ class _FlutterQuillState extends State<FlutterQuill> {
               showBackgroundColorButton: false,
               showCenterAlignment: false,
               showColorButton: false,
-              showImageButton: false,
               showInlineCode: false,
               showLink: false,
               showListCheck: false,
               showStrikeThrough: false,
               showUnderLineButton: false,
-              showVideoButton: false,
               multiRowsDisplay: false,
             ),
             QuillEditor.basic(

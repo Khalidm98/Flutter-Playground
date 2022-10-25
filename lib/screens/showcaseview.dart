@@ -45,7 +45,7 @@ class _MailPageState extends State<MailPage> {
   void initState() {
     super.initState();
     Future(() {
-      ShowCaseWidget.of(context)!.startShowCase(
+      ShowCaseWidget.of(context).startShowCase(
         [_five],
       );
     });
@@ -244,7 +244,7 @@ class _MailPageState extends State<MailPage> {
         child: FloatingActionButton(
           backgroundColor: Theme.of(context).primaryColor,
           onPressed: () {
-            ShowCaseWidget.of(context)!
+            ShowCaseWidget.of(context)
                 .startShowCase([_one, _two, _three, _four, _five]);
           },
           child: const Icon(
@@ -272,7 +272,7 @@ class _MailPageState extends State<MailPage> {
           description: 'Tap to check mail',
           disposeOnTap: true,
           onTargetClick: () {
-            ShowCaseWidget.of(context)!.startShowCase([_four, _five]);
+            ShowCaseWidget.of(context).startShowCase([_four, _five]);
           },
           child: Container(
             padding:

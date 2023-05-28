@@ -1,7 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
+import 'firebase_options.dart';
 import 'screens/external_apps.dart';
+import 'screens/firebase_realtime_db.dart';
 import 'screens/flutter_mentions.dart';
 import 'screens/flutter_quill.dart';
 import 'screens/showcaseview.dart';
@@ -13,6 +16,7 @@ import 'localizations/locale_keys.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(EasyLocalization(
     supportedLocales: const [Locale('en'), Locale('ar')],
     fallbackLocale: const Locale('en'),
@@ -67,6 +71,14 @@ class MyHomePage extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(builder: (_) => const ExternalApps()),
+              );
+            },
+          ),
+          ElevatedButton(
+            child: const Text('Firebase Realtime DB'),
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => const FirebaseRealtimeDB()),
               );
             },
           ),

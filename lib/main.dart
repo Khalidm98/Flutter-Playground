@@ -7,6 +7,7 @@ import 'screens/external_apps.dart';
 import 'screens/firebase_realtime_db.dart';
 import 'screens/flutter_mentions.dart';
 import 'screens/flutter_quill.dart';
+import 'screens/intl_phone_field_screen.dart';
 import 'screens/showcaseview.dart';
 import 'screens/table_calendar_screen.dart';
 import 'screens/webview_flutter.dart';
@@ -95,6 +96,14 @@ class MyHomePage extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(builder: (_) => FlutterMentionsScreen()),
+              );
+            },
+          ),
+          ElevatedButton(
+            child: const Text('Intl Phone Field'),
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => const IntlPhoneFieldScreen()),
               );
             },
           ),

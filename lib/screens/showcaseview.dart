@@ -373,11 +373,11 @@ class _MailPageState extends State<MailPage> {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 50,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const <Widget>[
+                    children: <Widget>[
                       SizedBox(
                         height: 5,
                       ),
